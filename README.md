@@ -1,20 +1,37 @@
 
-# React + Vite
+# 🐉 Dragon Ball Explorer - Parcial Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada en **React** y **Vite** que consume la [Dragon Ball API](https://dragonball-api.com/), implementando navegación por rutas, sistema de favoritos persistente y un módulo completo de gestión de usuarios (CRUD) con almacenamiento local (`localStorage`).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologías Utilizadas
 
-## React Compiler
+* **React** (Componentes funcionales y Hooks: `useState`, `useEffect`)
+* **React Router DOM** (Gestión de rutas y navegación entre vistas)
+* **CSS3** (Estilos centralizados y diseño responsivo)
+* **LocalStorage** (Persistencia local de usuarios y personajes favoritos)
+* **Fetch API** (Consumo asíncrono de datos de la API externa)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📋 Características Principales
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Parcial-2
->>>>>>> 6c6e9397768d3f00d2034725094bd96b98e128bd
+1. **Página de Inicio (`/`)**: Presentación atractiva del proyecto con accesos directos al listado y al registro.
+2. **Listado de Personajes (`/lista`)**: 
+   * Paginación completa de la API.
+   * Buscador interactivo por nombre y filtro por raza.
+   * Tarjetas dinámicas con la opción de agregar/quitar de favoritos.
+3. **Detalle de Personaje (`/detalle/:id`)**: Vista detallada con información avanzada del guerrero (Ki, Ki máximo, afiliación, descripción e historia).
+4. **Favoritos (`/favoritos`)**: Sección dedicada exclusivamente a los personajes guardados por el usuario, persistidos en el navegador.
+5. **Gestión de Usuarios / Registro (`/registro`)**: Módulo CRUD completo para registrar, editar y eliminar usuarios de forma local.
+
+---
+
+## 🛠️ Instrucciones de Instalación y Ejecución local
+
+Sigue estos pasos para clonar y ejecutar el proyecto en tu computadora:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/santiagoleyva2108-cmd/Parcial-2.git](https://github.com/santiagoleyva2108-cmd/Parcial-2.git)
