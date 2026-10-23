@@ -1,12 +1,6 @@
-
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
-  // Por ahora, los contadores comienzan en cero.
-  // Más adelante los conectaremos con favoritos y usuarios.
-  const cantidadFavoritos = 0;
-  const cantidadUsuarios = 0;
-
+function Navbar({ contadorFavoritos = 0, cantidadUsuarios = 0 }) {
   const obtenerClase = ({ isActive }) =>
     isActive ? "nav-enlace activo" : "nav-enlace";
 
@@ -26,7 +20,7 @@ function Navbar() {
         </NavLink>
 
         <NavLink to="/favoritos" className={obtenerClase}>
-          Favoritos ({cantidadFavoritos})
+          Favoritos ({contadorFavoritos})
         </NavLink>
 
         <NavLink to="/registro" className={obtenerClase}>

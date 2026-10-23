@@ -1,13 +1,10 @@
-
 import { useEffect, useState } from "react";
-import {
-  obtenerPersonajes,
-} from "../services/api";
+import { obtenerPersonajes } from "../services/api";
 import TarjetaPersonaje from "../components/TarjetaPersonaje";
 import Buscador from "../components/Buscador";
 import MensajeEstado from "../components/MensajeEstado.jsx";
 
-function ListaPersonajes() {
+function ListaPersonajes({ favoritos = [], toggleFavorito }) {
   const [personajes, setPersonajes] = useState([]);
   const [pagina, setPagina] = useState(1);
   const [totalPaginas, setTotalPaginas] = useState(1);
@@ -93,12 +90,22 @@ function ListaPersonajes() {
 
       {!cargando && !error && personajesFiltrados.length > 0 && (
         <section className="rejilla-personajes">
-          {personajesFiltrados.map((personaje) => (
-            <TarjetaPersonaje
-              key={personaje.id}
-              personaje={personaje}
-            />
-          ))}
+          {personajesFiltrados.map((personaje) => {
+            const esFavorito = favoritos.some((fav) => fav.id === personaje.id);
+
+            return (
+              <div key={personaje.id} className="tarjeta-wrapper">
+                <TarjetaPersonaje personaje={personaje} />
+                
+                <button
+                  onClick={() => toggleFavorito(personaje)}
+                  className={`btn-favorito-accion ${esFavorito ? 'es-favorito' : 'no-favorito'}`}
+                >
+                  {esFavorito ? '❤️ Quitar de Favoritos' : '🤍 Agregar a Favoritos'}
+                </button>
+              </div>
+            );
+          })}
         </section>
       )}
 
